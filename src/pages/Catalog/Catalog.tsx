@@ -20,6 +20,7 @@ const Catalog = () => {
   const [page, setPage] = useState(1);
   const [queryResp, setQueryResp] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [itemModal, setItemModal] = useState({})
 
   useEffect(() => {
     if (queryResp !== "" || page > 1) return;
@@ -42,8 +43,11 @@ const Catalog = () => {
   };
 
   const handleClickModal = (id: number) => {
-    console.log(id)
-    console.log(setQueryResp)
+    const [ item ] = catalogList.filter(
+      (cars) => cars.id === id)
+      setItemModal(item)
+      setShowModal(true)
+      console.log(setQueryResp)
   }
 
   return (
@@ -88,7 +92,7 @@ const Catalog = () => {
       )}
 
       {isLoading && <Loader/>}
-      {showModal && <Modal toggleModal={setShowModal}/>}
+      {showModal && <Modal item={itemModal} toggleModal={setShowModal}/>}
     </StyledSection>
   );
 };

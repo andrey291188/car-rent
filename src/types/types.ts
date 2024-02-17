@@ -40,6 +40,12 @@ export interface CatalogCard {
         rentalConditions: string;
         mileage: number;
 }
+
+export interface ModalType {
+  toggleModal: (value: boolean) => void,
+  item: CatalogCard | {},
+}
+
 export interface CatalogList {
     catalogList: CatalogCard[];
     isRefreshing: boolean;
