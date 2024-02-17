@@ -1,10 +1,10 @@
 import { Blocks } from "react-loader-spinner";
-
 import { createPortal } from "react-dom";
 import { StyledBackdrop } from "./StyledLoader";
 
+const modalRoot = document.querySelector("#root-modal") as HTMLDivElement;
+
 export const Loader = () => {
-  const modalRoot = document.querySelector("#root-modal") as HTMLDivElement;
 
   return createPortal(
     <StyledBackdrop>
@@ -19,3 +19,4 @@ export const Loader = () => {
     modalRoot
   );
 };
+

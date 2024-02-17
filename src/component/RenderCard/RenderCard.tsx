@@ -2,7 +2,7 @@ import { createFavorite, deleteFavorit } from "../../store/favorite/favoriteRedu
 import { RootStore, useAppDispatch, useAppSelector } from "../../store/store";
 import { CardRenderType } from "../../types/types";
 import { StyledWrapperCard } from "./StyledRenderCard.styled";
-import { AiTwotoneStar } from "react-icons/ai"
+import { PiHeartStraightFill } from "react-icons/pi";
 
 const catalogSelector = (state: RootStore) => {
   return state.catalog;
@@ -24,6 +24,7 @@ const RenderCard = ({
   mileage,
   type,
   accessories,
+  buttonOnClick,
 }: CardRenderType) => {
   const { catalogList } = useAppSelector(catalogSelector);
   const { favoriteList } = useAppSelector(favoriteSelector);
@@ -58,11 +59,11 @@ const handleDeleteFavorite = (id: number) => {
       { !obJectIncluded(id) ?
                 <button className="favorite-button" onClick={() => {handleAddFavorite(id)}}
                   type="button">
-                  <AiTwotoneStar size={24}/>
+                  <PiHeartStraightFill size={24} color="rgb(52, 112, 255)"/>
                 </button> :
                 <button className="favorite-button" onClick={() => {handleDeleteFavorite(id)}}
                 type="button">
-                <AiTwotoneStar size={24} color="orange"/>
+                <PiHeartStraightFill size={24} color="red" />
               </button>
               }
       <img
@@ -116,7 +117,7 @@ const handleDeleteFavorite = (id: number) => {
         </div>
       </ul>
 
-      <button className="button">Learn more</button>
+      <button className="button" onClick={() => buttonOnClick(id)}>Learn more</button>
     </StyledWrapperCard>
   );
 };

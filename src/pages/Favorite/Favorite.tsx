@@ -9,6 +9,10 @@ const favoriteSelector = (state: RootStore) => {
 const Favorite = () => {
   const { favoriteList } = useAppSelector(favoriteSelector);
 
+  const handleClickModal = (id: number) => {
+    console.log(id)
+  }
+
     return (
       <StyledSection>
       <ul className="list-card-auto">
@@ -37,7 +41,10 @@ const Favorite = () => {
            rentalCompany={rentalCompany}
            mileage={mileage}
            type={type}
-           accessories={accessories}/>
+           accessories={accessories}
+           buttonOnClick={handleClickModal}
+           />
+           
           )
         )}
       </ul>

@@ -19,6 +19,7 @@ export interface CardRenderType {
   rentalCompany: string;
   address: string;
   mileage: number;
+  buttonOnClick: (id: number) => void;
 }
 
 export interface CatalogCard {

@@ -6,7 +6,9 @@ import {
 } from "../../store/catalog/thunkCatalog";
 import RenderCard from "../../component/RenderCard/RenderCard";
 import { StyledSection } from "./StyledCatalog.styled";
+import Modal from "../../component/Modal/Modal";
 import { Loader } from "../../component/Loader/Loader";
+
 
 const catalogSelector = (state: RootStore) => {
   return state.catalog;
@@ -17,6 +19,7 @@ const Catalog = () => {
   const dispatch = useAppDispatch();
   const [page, setPage] = useState(1);
   const [queryResp, setQueryResp] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     if (queryResp !== "" || page > 1) return;
@@ -37,6 +40,11 @@ const Catalog = () => {
   const handleClick = () => {
     setPage((prePage) => prePage + 1);
   };
+
+  const handleClickModal = (id: number) => {
+    console.log(id)
+    console.log(setQueryResp)
+  }
 
   return (
     <StyledSection>
@@ -68,6 +76,7 @@ const Catalog = () => {
               mileage={mileage}
               type={type}
               accessories={accessories}
+              buttonOnClick={handleClickModal}
             />
           )
         )}
@@ -79,6 +88,7 @@ const Catalog = () => {
       )}
 
       {isLoading && <Loader/>}
+      {showModal && <Modal toggleModal={setShowModal}/>}
     </StyledSection>
   );
 };

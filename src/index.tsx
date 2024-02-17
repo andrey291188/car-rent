@@ -9,6 +9,8 @@ import { persistor, store } from "./store/store";
 import { Provider } from "react-redux";
 import { Loader } from "./component/Loader/Loader";
 
+
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
