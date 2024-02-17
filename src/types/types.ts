@@ -43,7 +43,7 @@ export interface CatalogCard {
 
 export interface ModalType {
   toggleModal: (value: boolean) => void,
-  item: CatalogCard | {},
+  item: CatalogCard,
 }
 
 export interface CatalogList {

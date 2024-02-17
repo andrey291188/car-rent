@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledBackdrop = styled.div`
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(18, 20, 23, 0.5);
   position: fixed;
   top: 0;
   left: 0;

@@ -12,6 +12,9 @@ const favoriteSelector = (state: RootStore) => {
   return state.favorite;
 };
 
+export const defaultImg =
+"https://netsh.pp.ua/wp-content/uploads/2017/08/Placeholder-1.png";
+
 const RenderCard = ({
   id,
   make,
@@ -43,8 +46,6 @@ const handleDeleteFavorite = (id: number) => {
   dispatch(deleteFavorit(id))
 }
 
-  const defaultImg =
-    "https://netsh.pp.ua/wp-content/uploads/2017/08/Placeholder-1.png";
   const cityAndCountry = address.split(",").slice(1);
 
   let shortestString = accessories.reduce((shortest, current) => {

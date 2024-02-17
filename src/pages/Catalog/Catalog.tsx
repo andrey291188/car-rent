@@ -8,6 +8,7 @@ import RenderCard from "../../component/RenderCard/RenderCard";
 import { StyledSection } from "./StyledCatalog.styled";
 import Modal from "../../component/Modal/Modal";
 import { Loader } from "../../component/Loader/Loader";
+import { CatalogCard } from "../../types/types";
 
 
 const catalogSelector = (state: RootStore) => {
@@ -20,7 +21,7 @@ const Catalog = () => {
   const [page, setPage] = useState(1);
   const [queryResp, setQueryResp] = useState("");
   const [showModal, setShowModal] = useState(false);
-  const [itemModal, setItemModal] = useState({})
+  const [itemModal, setItemModal] = useState<CatalogCard | null>(null)
 
   useEffect(() => {
     if (queryResp !== "" || page > 1) return;
@@ -92,7 +93,7 @@ const Catalog = () => {
       )}
 
       {isLoading && <Loader/>}
-      {showModal && <Modal item={itemModal} toggleModal={setShowModal}/>}
+      {showModal && itemModal && <Modal item={itemModal} toggleModal={setShowModal}/>}
     </StyledSection>
   );
 };
