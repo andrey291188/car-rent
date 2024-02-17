@@ -13,7 +13,7 @@ const favoriteReducer = createSlice({
             return {
               ...state,
               favoriteList: state.favoriteList.filter(
-                (cars) => cars._id !== action.payload),
+                (cars) => cars.id !== action.payload),
               }
             },
 }})
