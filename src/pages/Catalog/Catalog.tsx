@@ -50,7 +50,6 @@ const Catalog = () => {
     resetForm()
   }
 
-  console.log(catalogList)
   return (
     <StyledSection>
        <FormSubmit handleSubmit={handleSubmit}/>

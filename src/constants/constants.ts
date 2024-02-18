@@ -10,7 +10,6 @@ export const brandChoiсeList = [
     "Hyundai",
     "MINI",
     "Bentley",
-    "Mercedes-Benz",
     "Aston Martin",
     "Pontiac",
     "Lamborghini",

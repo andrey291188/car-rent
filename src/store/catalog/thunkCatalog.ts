@@ -4,7 +4,7 @@ import { getRequest } from "../../service/createResponse";
 import { toast } from "react-toastify";
 
 export const catalogThunk = createAsyncThunk(
-    "catalog",
+    "catalog/get",
     async (body: ParamsRequest, { rejectWithValue }) => {
       try {
         const data = await getRequest(body);
@@ -18,7 +18,7 @@ export const catalogThunk = createAsyncThunk(
   );
 
   export const catalogPageThunk = createAsyncThunk(
-    "catalog-page",
+    "catalog/page",
     async (body: ParamsRequest, { rejectWithValue }) => {
       try {
         const data = await getRequest(body);
