@@ -1,4 +1,4 @@
-**Link to** [BACKEND](https://andrey291188.github.io/job-test/)
+**Link to** [GH_Pages](https://andrey291188.github.io/job-test/)
 
 # CAR RENTAL
 
