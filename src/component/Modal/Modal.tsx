@@ -1,6 +1,6 @@
 import { createPortal } from "react-dom";
 import { StyledBackdrop } from "./StyledModal.styled";
-import { useEffect } from "react";
+import { MouseEvent, useEffect } from "react";
 import { ModalType } from "../../types/types";
 import { defaultImg } from "../RenderCard/RenderCard";
 import { IoClose } from "react-icons/io5";
@@ -22,7 +22,7 @@ const Modal = ({ item, toggleModal }: ModalType) => {
     };
   }, [toggleModal]);
 
-  const backdropClick = (e: any) => {
+  const backdropClick = (e: MouseEvent) => {
     if (e.currentTarget === e.target) {
       toggleModal(false);
     }
