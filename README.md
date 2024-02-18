@@ -1,46 +1,25 @@
-# Getting Started with Create React App
+**Link to** [BACKEND](https://andrey291188.github.io/job-test/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# CAR RENTAL
 
-## Available Scripts
+![Main page screenshot](./src/imgFolder/main-page.png)
 
-In the project directory, you can run:
+## About the project:
 
-### `npm start`
+CAR RENTAL: With us you can rent a good car at an affordable price!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The Car Rental website is a specialized application designed to streamline and enhance the car rental process. This application is crafted to effortlessly monitor your car rental activities and establish personalized goals to optimize your rental experience. The user-friendly and responsive interface simplifies the management of your car rental needs without unnecessary complexity.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This project is implemented using TypeScript, leveraging the React JS library for the frontend and Mockapi for the backend. The combination of these technologies ensures efficient and reliable development, creating a seamless experience for users managing their car rental activities.
 
-### `npm test`
+Improve your car rental habits – download the Car Rental website now and simplify the way you rent cars!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Technologies used in the project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Front-end**<br />
+`TypeScript` `React` `ReduxToolkit` `ReduxPersist` `Axios` `HTML/CSS` `Formik`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## The developer who worked on the project:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Andrii Zaiats** - Full-stack developer.
