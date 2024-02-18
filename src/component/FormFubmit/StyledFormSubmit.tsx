@@ -33,6 +33,7 @@ export const StyledFormWrapper = styled.div`
     outline: none;
     background: rgb(247, 247, 251);
     margin-right: 18px;
+    height: 47px;
   }
 
   .form select  {
