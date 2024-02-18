@@ -6,7 +6,7 @@ export const StyledHomepageWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: 86vh;
+  height: 88vh;
   padding-top: 150px;
   padding-left: 15px;
   padding-right: 15px;
@@ -41,8 +41,8 @@ export const StyledHomepageWrapper = styled.div`
 
   .button {
     border-radius: 5px;
-    padding: 10px;
-    font-size: 28px;
+    padding: 15px;
+    font-size: 20px;
     font-weight: 500;
     background-color: rgb(52, 112, 255);
     border: 2px solid white;
