@@ -1,6 +1,9 @@
+import { useState } from "react";
+import Modal from "../../component/Modal/Modal";
 import RenderCard from "../../component/RenderCard/RenderCard";
 import { RootStore, useAppSelector } from "../../store/store";
 import { StyledSection } from "./StyledFavorite.styled";
+import { CatalogCard } from "../../types/types";
 
 const favoriteSelector = (state: RootStore) => {
   return state.favorite;
@@ -8,14 +11,21 @@ const favoriteSelector = (state: RootStore) => {
 
 const Favorite = () => {
   const { favoriteList } = useAppSelector(favoriteSelector);
+  const [showModal, setShowModal] = useState(false);
+  const [itemModal, setItemModal] = useState<CatalogCard | null>(null)
 
   const handleClickModal = (id: number) => {
-    console.log(id)
+    const [ item ] = favoriteList.filter(
+      (cars) => cars.id === id)
+      setItemModal(item)
+      setShowModal(true)
+
   }
 
     return (
       <StyledSection>
       <ul className="list-card-auto">
+        {!favoriteList.length && <p className="no-car">Sorry but no cars were found</p>}
         {favoriteList.map(
           ({
             id,
@@ -48,6 +58,7 @@ const Favorite = () => {
           )
         )}
       </ul>
+      {showModal && itemModal && <Modal item={itemModal} toggleModal={setShowModal}/>}
     </StyledSection>
     );
   };

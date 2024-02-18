@@ -8,8 +8,8 @@ import RenderCard from "../../component/RenderCard/RenderCard";
 import { StyledSection } from "./StyledCatalog.styled";
 import Modal from "../../component/Modal/Modal";
 import { Loader } from "../../component/Loader/Loader";
-import { CatalogCard } from "../../types/types";
-
+import { CatalogCard, FormSubmitValue, ResetForm } from "../../types/types";
+import FormSubmit from "../../component/FormFubmit/FormSubmit";
 
 const catalogSelector = (state: RootStore) => {
   return state.catalog;
@@ -24,18 +24,11 @@ const Catalog = () => {
   const [itemModal, setItemModal] = useState<CatalogCard | null>(null)
 
   useEffect(() => {
-    if (queryResp !== "" || page > 1) return;
-    dispatch(catalogThunk({ page: `${page}` }));
-  }, [dispatch, page, queryResp]);
-
-  useEffect(() => {
-    if (queryResp === "") return;
-    dispatch(catalogPageThunk({ page: `${page}`, query: queryResp }));
-  }, [dispatch, page, queryResp]);
-
-  useEffect(() => {
-    if (queryResp !== "" || page === 1) return;
-    dispatch(catalogPageThunk({ page: `${page}`, query: queryResp }));
+    if (page === 1) {
+        dispatch(catalogThunk({ page: `${page}`, query: queryResp }));
+    } else {
+        dispatch(catalogPageThunk({ page: `${page}`, query: queryResp }));
+    }
   }, [dispatch, page, queryResp]);
 
 
@@ -48,12 +41,21 @@ const Catalog = () => {
       (cars) => cars.id === id)
       setItemModal(item)
       setShowModal(true)
-      console.log(setQueryResp)
+  }
+ 
+  const handleSubmit = (values: FormSubmitValue, { resetForm }: ResetForm) => {
+    setPage(1)
+    const { carBrand } = values
+    setQueryResp(carBrand)
+    resetForm()
   }
 
+  console.log(catalogList)
   return (
     <StyledSection>
+       <FormSubmit handleSubmit={handleSubmit}/>
       <ul className="list-card-auto">
+      {!catalogList.length && <p className="no-car">Sorry but no cars were found</p>}
         {catalogList.length > 0 && catalogList.map(
           ({
             id,

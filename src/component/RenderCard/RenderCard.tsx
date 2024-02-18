@@ -2,7 +2,8 @@ import { createFavorite, deleteFavorit } from "../../store/favorite/favoriteRedu
 import { RootStore, useAppDispatch, useAppSelector } from "../../store/store";
 import { CardRenderType } from "../../types/types";
 import { StyledWrapperCard } from "./StyledRenderCard.styled";
-import { PiHeartStraightFill } from "react-icons/pi";
+import { FaRegHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa"
 
 const catalogSelector = (state: RootStore) => {
   return state.catalog;
@@ -60,11 +61,11 @@ const handleDeleteFavorite = (id: number) => {
       { !obJectIncluded(id) ?
                 <button className="favorite-button" onClick={() => {handleAddFavorite(id)}}
                   type="button">
-                  <PiHeartStraightFill size={24} color="rgb(52, 112, 255)"/>
+                  <FaRegHeart size={24} color="white"/>
                 </button> :
                 <button className="favorite-button" onClick={() => {handleDeleteFavorite(id)}}
                 type="button">
-                <PiHeartStraightFill size={24} color="red" />
+                <FaHeart size={24} color="rgb(52, 112, 255)"/>
               </button>
               }
       <img

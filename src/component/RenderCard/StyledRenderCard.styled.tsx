@@ -38,18 +38,19 @@ export const StyledWrapperCard = styled.li`
     margin-bottom: 28px;
   }
 
-  .container-desc {
-    display: flex;
-  }
-
+  
   .item-desc-car:not(:first-child) {
     margin-left: 6px;
   }
-
+  
   .item-desc-car:not(:last-child) {
     margin-right: 6px;
   }
-
+  
+  .container-desc {
+    display: flex;
+  }
+  
   .vector {
     margin: 0px 0px;
     border: 1px solid rgba(18, 20, 23, 0.1);

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledSection = styled.section`
+  padding-top: 25px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -16,15 +17,24 @@ export const StyledSection = styled.section`
     column-gap: 29px;
 
     @media (max-width: 1184px) {
-    width: 880px;
-  }
+      width: 880px;
+    }
 
-  @media (max-width: 879px) {
-    width: 577px;
-  }
+    @media (max-width: 879px) {
+      width: 577px;
+    }
 
-  @media (max-width: 576px) {
-    width: 274px;
-  }
+    @media (max-width: 576px) {
+      width: 274px;
+    }
+
+    .no-car {
+      width: 100%;
+      text-align: center;
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0%;
+    }
   }
 `;

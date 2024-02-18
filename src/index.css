@@ -1,8 +1,10 @@
 body {
   margin: 0;
-  font-family: 'Manrope';
+  font-family: 'Manrope', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: scroll;
+
 }
 
 code {

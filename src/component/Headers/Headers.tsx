@@ -1,13 +1,15 @@
-import { NavLink } from "react-router-dom";
+import { Header, NavigateButton } from "./StyledHeaders.styled";
 
 const Headers = () => {
-
   return (
-    <nav>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/catalog">catalog</NavLink>
-      <NavLink to="/favorites">favorites</NavLink>
-    </nav>
+    <Header>
+      <NavigateButton to="/" className="navigate-button">Home</NavigateButton>
+
+      <nav className="navigate">
+        <NavigateButton to="/catalog" className="navigate-button">Catalog</NavigateButton>
+        <NavigateButton to="/favorites" className="navigate-button">Favorites</NavigateButton>
+      </nav>
+    </Header>
   );
 };
 
